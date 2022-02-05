@@ -113,6 +113,7 @@ MonoBehaviour:
   rb: {fileID: 5069762833710489219}
   forvardForce: 2800
   sidewaysForce: 100
+  isGrounded: 0
 --- !u!54 &5069762833710489219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -142,4 +143,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 5069762833710489222}
-  gameManager: {fileID: 0}
