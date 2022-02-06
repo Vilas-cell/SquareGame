@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float forvardForce = 1500;
     public float sidewaysForce = 500;
     public bool isGrounded;
-
+    
     void OnCollisionEnter()
     {
         isGrounded = true;
@@ -15,21 +15,23 @@ public class PlayerMovement : MonoBehaviour
        
     void Update()
     {
+        
         rb.AddForce(0, 0, forvardForce * Time.deltaTime);
 
-        if ( Input.GetKey("d") )
+        if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-        if ( Input.GetKey("a") )
+        if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            
+         
             isGrounded =false;
             rb.AddForce(new Vector3(0, 800, 0));
+
         }
         if(isGrounded == false)
         {
@@ -43,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
         if (rb.position.y < -1)
         { 
                 FindObjectOfType<GameManager>().EndGame();
-
-
         }
     }
 
